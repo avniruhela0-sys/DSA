@@ -11,13 +11,13 @@ private:
         
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            
             if (nums[mid] == target) {
                 first = mid;       // Record position
                 right = mid - 1;   // Search further left for the first occurrence
             } else if (nums[mid] < target) {
                 left = mid + 1;
             } else {
+                right = mid - 1;
                 right = mid - 1;
             }
         }
